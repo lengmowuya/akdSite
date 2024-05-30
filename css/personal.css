@@ -1,0 +1,328 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background: #000;
+}
+body .bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  opacity: 0.4;
+  background: url("../assets//bg//游戏图片 (2).jpg") no-repeat fixed top center;
+  background-size: 120% auto;
+  filter: blur(12px);
+  z-index: -5;
+}
+#pageCenter {
+  width: 100vw;
+  box-sizing: border-box;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 10px;
+  padding-top: 40px;
+  box-shadow: inset 0px 0px 38px #000;
+}
+.title {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title .main {
+  font-size: 48px;
+  color: gold;
+  transition: all 0.35s;
+  text-shadow: 0 0 15px #000, 0 0 30px rgba(0, 0, 0, 0.6);
+  letter-spacing: 4px;
+}
+.title .main:hover {
+  color: #fff;
+}
+.title .text {
+  color: #fff;
+  text-shadow: 0 0 15px #000;
+}
+.title .time {
+  color: #fff;
+  font-size: 12px;
+  margin-top: 5px;
+  opacity: 0.8;
+}
+.title .rantInfo {
+  max-width: 800px;
+  border-radius: 6px;
+  border: 1px solid #29b0df;
+  background: #001b44bb;
+  color: #4d83b5;
+  box-shadow: 0 0 9px #0068a3;
+  margin-top: 15px;
+  padding: 10px;
+  transition: all 0.35s;
+}
+.title .rantInfo .white {
+  color: #ffffffaa;
+  transition: all 0.35s;
+}
+.title .rantInfo:hover {
+  background: #001b44dd;
+}
+.title .rantInfo:hover .white {
+  color: #fff;
+}
+#List {
+  border-radius: 8px;
+  max-width: 1200px;
+  padding-bottom: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+#List .List_image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  opacity: 0.7;
+}
+#List ul {
+  position: relative;
+  z-index: 99;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#List ul li {
+  box-sizing: border-box;
+  width: 20%;
+  border-radius: 6px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s;
+  cursor: pointer;
+  padding: 10px;
+}
+#List ul li:hover {
+  z-index: 9999;
+}
+#List ul li:hover .qq {
+  opacity: 0.8 !important;
+}
+#List ul li:hover .icon {
+  background: #010d1f;
+  border: 4px solid #4393bf;
+  box-shadow: 0px 0px 30px blue;
+  border-radius: 30px;
+  animation: shadowInfinate 2s infinite forwards ;
+}
+#List ul li:hover .personalInfo {
+  display: block;
+  animation: move 1s forwards;
+}
+#List ul li .backgroundFilter {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow: hidden;
+  top: 0px;
+}
+#List ul li .backgroundFilter .bgIcon {
+  width: 100%;
+  transform: scale(3) rotateZ(0deg);
+  transform-origin: center 15%;
+  filter: blur(1px);
+  opacity: 0.15;
+  opacity: 0;
+}
+#List ul li .icon {
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.35s;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+#List ul li .personalInfo {
+  display: none;
+  width: 400px;
+  position: absolute;
+  right: 0px;
+  top: 0;
+  transform: translate(100%, 0);
+  transition: all 0.35s;
+  z-index: 9999999;
+}
+#List ul li .personalInfo:hover {
+  display: none !important;
+}
+#List ul li .personalMaster {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid #04496e;
+  background: #33aced;
+  position: relative;
+  z-index: 9999;
+}
+#List ul li .name {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  position: relative;
+  text-shadow: 1px 1px 3px #031c8a;
+  border-radius: 30px;
+  transition: all 0.35s;
+}
+#List ul li .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #001b44dd;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: 4px;
+}
+#List ul li .info .userName {
+  color: #fff;
+  font-weight: bold;
+  font-size: 13px;
+  width: 100%;
+  transition: all 0.35s;
+  background: #00081966;
+  box-sizing: border-box;
+  padding: 7px;
+  padding-left: 10px;
+  text-shadow: 0 0 8px rgba(163, 201, 228, 0.2), 0 0 15px rgba(163, 201, 228, 0.1);
+}
+#List ul li .info .qq {
+  color: #fff;
+  font-size: 13px;
+  opacity: 0.5;
+  font-weight: normal;
+  line-height: 19px;
+  padding: 10px;
+  transition: all 0.35s;
+}
+#List ul li .info .money {
+  color: red;
+  font-size: 20px;
+  margin-top: 16px;
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  font-size: 12px;
+  color: #fff;
+  opacity: 0.4;
+}
+#List ul li .index {
+  font-size: 46px;
+  color: #fff;
+  font-weight: bold;
+  opacity: 0.25;
+  flex-grow: 1;
+  justify-content: flex-end;
+  text-align: right;
+  align-items: center;
+  vertical-align: middle;
+  margin-top: 10px;
+  margin-right: 10px;
+  user-select: none;
+  transition: all 0.35s;
+}
+#List ul li:hover {
+  border-color: #56abd8;
+}
+#List ul li:hover .index {
+  opacity: 0.5;
+}
+#List ul li:first-of-type::after {
+  content: "最新";
+  position: absolute;
+  background: green;
+  padding: 2px 6px;
+  font-size: 12px;
+  display: inline-block;
+  color: #fff;
+  border-radius: 3px;
+  right: 6px;
+  top: 6px;
+}
+@keyframes rotateInfinate {
+  0% {
+    transform: rotateZ(0deg) scale(1);
+  }
+  50% {
+    transform: rotateZ(360deg) scale(1.5);
+  }
+  100% {
+    transform: rotateZ(720deg) scale(1);
+  }
+}
+@keyframes shadowInfinate {
+  0% {
+    box-shadow: 0px 0px 4px blue ,0px 0px 68px blue;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0px 0px 60px #0bbddc, 0px 0px 368px #0bd2dc;
+    transform: scale(1.3);
+    opacity: 0.9;
+  }
+  100% {
+    box-shadow: 0px 0px 4px blue ,0px 0px 68px blue;
+    transform: scale(1);
+  }
+}
+@keyframes urInfinate {
+  50% {
+    box-shadow: 0px 0px 40px #061e97;
+    transform: scale(1.01);
+  }
+}
+@keyframes move {
+  0% {
+    transform: translate(calc(100% + 0px), 0);
+  }
+  100% {
+    transform: translate(calc(100% + 30px), 0);
+  }
+}
+@media screen and (max-width: 480px) {
+  .title .main {
+    font-size: 22px;
+  }
+  #pageCenter {
+    padding-top: 20px;
+  }
+  #List ul {
+    padding: 5px;
+  }
+  #List ul li {
+    margin: 5px;
+  }
+  #List ul li .name {
+    font-size: 14px;
+  }
+  #List ul li:nth-of-type(8n) {
+    margin-bottom: 0px;
+  }
+}

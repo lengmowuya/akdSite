@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #061601;
+  font-family: '微软雅黑';
+  background: #083c07;
+}
+body .bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: #03530a url("../assets//bg//游戏图片 (1).jpg") no-repeat fixed center center;
+  filter: blur(9px);
+  background-size: 120% auto;
+  opacity: 0.6;
+  z-index: -5;
+}
+#pageCenter {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 10px;
+  padding-top: 40px;
+}
+.title {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title .main {
+  font-size: 36px;
+  font-weight: bold;
+  color: #a3c9e4;
+  transition: all 0.35s;
+  color: #fff;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px gold, 0 0 30px rgba(255, 255, 255, 0.15);
+  position: relative;
+  z-index: 999;
+  margin-bottom: 20px;
+}
+.title .main:hover {
+  color: #fff;
+  text-shadow: 0 0 15px #fff, 0 0 30px rgba(255, 255, 255, 0.3);
+}
+.title .other {
+  color: #fff;
+}
+.title .logo {
+  margin-bottom: 10px;
+}
+.title .logo img {
+  width: 50%;
+}
+.title .time {
+  color: #fff;
+  font-size: 16px;
+  margin-top: 5px;
+  letter-spacing: 3px;
+  font-style: italic;
+  opacity: 0.8;
+}
+#List {
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  position: relative;
+}
+#List .mini {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: space-between;
+  position: relative;
+  z-index: 9999;
+  background: #010d1f;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+#List .mini li {
+  list-style: none;
+}
+#List .mini li .header {
+  width: 24px;
+  height: 24px;
+  margin: 4px;
+  border-radius: 3px;
+  border: 1px solid #43bf6c;
+  box-shadow: 0px 0px 3px #43bf54;
+  user-select: none;
+  transition: all 0.2s;
+}
+#List .mini li .header:hover {
+  transform: scale(2);
+}
+#List .development {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+#List .development li {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+#List .development li .header {
+  border-radius: 6px;
+  width: 70px;
+  height: 70px;
+  border: 3px solid #43bf5a;
+  box-shadow: 0px 0px 9px #62bf43;
+  transition: all 0.2s;
+  background: #49bf43;
+  text-align: center;
+}
+#List .development li .header:hover {
+  transform: scale(2);
+}
+#List .development li .info {
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+#List .development li .info .userName {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-shadow: 0px 0px 6px #00ff15;
+  text-align: center;
+}
+#List .block {
+  padding: 10px 10px;
+  position: relative;
+  z-index: 99;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 20px;
+}
+#List .block li {
+  width: 25%;
+  flex-grow: 1;
+  align-items: center;
+  margin: 6px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  transition: all 0.35s;
+  min-width: 200px;
+  opacity: 1;
+  overflow: hidden;
+  background: rgba(1, 31, 1, 0.6);
+}
+#List .block li:hover {
+  transform: scale(1.2);
+}
+#List .block li .header {
+  border-radius: 6px;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #def0de;
+  transition: all 0.2s;
+}
+#List .block li .info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px;
+  width: 35%;
+  flex-grow: 1;
+  height: 81px;
+  padding: 10px 10px;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+#List .block li .info .userName {
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+#List .block li .info .qq {
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.5;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+#List .block li .info .money {
+  color: #ffea00;
+  font-size: 14px;
+  font-style: italic;
+  margin-left: 2px;
+  opacity: 0.5;
+}
+#List .block li .index {
+  width: 100px;
+  font-size: 64px;
+  color: #fff;
+  font-weight: bold;
+  opacity: 0.4;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+  margin-top: 10px;
+  margin-right: 10px;
+  user-select: none;
+  transition: all 0.35s;
+}
+#List .block li::before {
+  content: "";
+  background: url("../assets//bg//透明边栏.png") no-repeat center right;
+  background-size: auto 120%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: -4px;
+  top: 0;
+  z-index: -99;
+}
+@media screen and (max-width: 480px) {
+  .title .main {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+  #pageCenter {
+    padding: 6px;
+    padding-top: 20px;
+  }
+  #pageCenter .awardMoney {
+    transform: scale(0.9);
+  }
+  #pageCenter .awardMoney .hintTitle {
+    transform: scale(0.9);
+  }
+  #pageCenter .awardMoney .hintTitle .numberMoney {
+    letter-spacing: 2px;
+    font-size: 40px;
+    margin: 0px 6px;
+  }
+  #pageCenter .awardMoney .hintTitle .small {
+    flex-shrink: 0;
+    line-height: 80px;
+    font-size: 20px;
+  }
+  .rantInfo {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 12px;
+  }
+  #List ul {
+    padding: 4px;
+  }
+  #List ul li {
+    margin: 4px;
+    padding: 14px;
+    flex-direction: column;
+    align-items: center;
+  }
+  #List ul li .header {
+    margin-top: 6px;
+    width: 90px;
+    height: 90px;
+    border-width: 2px;
+  }
+  #List ul li .AwardBlock {
+    width: 100%;
+  }
+  #List ul li .AwardBlock > span > p {
+    width: 100%;
+  }
+  #List ul li .info {
+    width: 200px;
+    padding: 0;
+    align-items: center;
+  }
+  #List ul li .info .userName {
+    margin-top: 4px;
+    font-size: 20px;
+  }
+  #List ul li .info .qq {
+    font-size: 10px;
+  }
+  #List ul li .info .money {
+    margin-top: 0px;
+  }
+  #List ul li .index {
+    width: auto;
+    height: auto;
+    margin: 0;
+    font-size: 26px;
+    padding-right: 10px;
+  }
+}

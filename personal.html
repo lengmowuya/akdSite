@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿克岛-定制展览馆</title>
+    <link rel="stylesheet" href="./css/personal.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="icon" href="./assets/网站ICON.ico" type="image/x-icon"/>
+    <script src=".\js\unpkg.com_vue@3.3.4_dist_vue.global.js"></script>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4271778_4ofmios5k5x.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="bg"></div>
+        <div class="nav">
+            <div class="logo"><img src="./assets//死亡空间站.png" alt=""></div>
+            <ul>
+                <li><a href="/activity.html"><i class="iconfont  icon-paixu"></i><span>活动</span></a></li>
+                <li class="active"><a href="/personal.html"><i class="iconfont  icon-qianbao"></i><span>展览</span></a></li>
+                <li ><a href="/index.html"><i class="iconfont  icon-pinglun"></i><span>空间站人员</span></a></li>
+            </ul>   
+        </div>
+        <div id="pageCenter">
+            <div class="title">
+                <p class="main">群友定制展览馆</p>
+                <p class="text">电脑网页访问效果最佳</p>
+            </div>
+            <div id="List">
+                <div class="List_image">
+                    <!-- <div class="list_topImage"></div>
+                    <div class="list_bottomImage"></div> -->
+                </div>
+                <ul >
+                    <li v-for="item in activityList" :class="{'ur':item.ur}">
+                        <div class="backgroundFilter">
+                            <img class="bgIcon" :src="'./assets/装备图标/' + item.name + '.png'" alt="" class="icon">
+                        </div>
+                        <img :src="'./assets/装备鉴赏/' + item.name + '.png'" alt="" class="personalInfo">
+                        <img :src="'./assets/装备图标/' + item.name + '.png'" alt="" class="icon">
+
+                        <!-- <div class="info">
+                            <p class="name">{{item.name}}</p>
+                            <img :src="'https://q4.qlogo.cn/g?b=qq&nk='+ item.user + '&s=140'" alt="" class="personalMaster">
+                        </div> -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        let activityList = []
+        // 根据数组自动化创建列表元素
+        function initList(){
+            let ListUl = document.querySelector("#List>ul");
+            for(let i=0;i<activityList.length;i++){
+                let memberObj = activityList[i];
+                // 创建li
+                let li = document.createElement("li");
+                let a =document.createElement("a");
+                // a.href="/sponsor.html";
+                // a.setAttribute("h")
+                // 创建头像
+                let img = document.createElement("img");
+                img.src = memberObj.cover_url;
+                // 创建信息块
+                let info = document.createElement("div");
+                info.classList.add("info");
+                    // 创建用户名
+                    let userName = document.createElement("p");
+                    userName.classList.add("userName");
+                    userName.innerText = memberObj.name;
+                    // 创建用户QQ
+                    let userqq = document.createElement("p");
+                    userqq.classList.add("qq");
+                    userqq.innerText = memberObj.contentText;
+                    // 创建额度
+                    let usermoney = document.createElement("p");
+                    usermoney.classList.add("money");
+                    usermoney.innerText = memberObj.date;
+                // 创建排行序号
+                let userindex = document.createElement("div");
+                userindex.classList.add("index");
+                userindex.innerText = i+1;
+                // 整合元素
+                info.appendChild(userName);
+                info.appendChild(userqq);
+                info.appendChild(usermoney);
+                // a.appendChild(img);
+                a.appendChild(info);
+                li.appendChild(a);
+                // li.appendChild(userindex);
+                ListUl.appendChild(li);
+            }
+
+        }
+
+        let memberRant = [];
+        // 合并记录至QQ为单位下的数据
+        function initRant(){
+            // 检索所有记录
+            for (let index = 0; index < memberMoney.length; index++) {
+                let member = memberMoney[index];
+                let isExist = false;
+                // 检索现有排行是否已经有记录
+                for (let j = 0; j < memberRant.length; j++) {
+                    let rant = memberRant[j];
+                    if(rant.qq == member.qq){
+                        rant.quota += member.quota;
+                        isExist = true;
+                        break;
+                    }
+                }
+                if(!isExist){
+                    memberRant.push(member);
+                }
+            }
+        }
+        // 对赞助数据进行排序
+        function initRantSort(){
+            memberRant = memberRant.sort(function(a,b){
+                return  b.quota - a.quota;
+            })
+        }
+        const { createApp, ref } = Vue
+
+        createApp({
+        setup() {
+            const message = ref('Hello vue!')
+            return {
+                activityList : [
+                    {name: "看到你了～哦～",user:136195612,ur:true},
+                    {name: "静水流涌之辉",user:136195612,ur:true},
+                    {name: "魂魄之曲",user:136195612,ur:true},
+                    {name: "虫群之佑",user:136195612,ur:true},
+                    {name: "猫猫特战队",user:2756047249,ur:true},
+                    {name: "溺爱",user:3230411246,ur:true},
+                    {name: "鲨鲨的祖传利维坦战甲",user:136195612,ur:true},
+                    {name: "强制数据删除",user:365449136,ur:true},
+                    {name: "审判之火",user:1124150844,ur:true},
+                    {name: "生命之火",user:1124150844,ur:true},
+                    {name: "江行初雪",user:2644982732,ur:true},
+                    {name: "见识一下本姑娘的腻害",user:3166882510,ur:true},
+                    {name: "发生什么事了",user:365449136,ur:true},
+                    {name: "狐狸想要摆烂，所以他很可爱",user:2270976921},
+                    {name: "星芒",user:2270976921},
+                    {name: "玩具",user:3230411246},
+                    {name: "埃辛诺斯双刃",user:1340741651},
+                    {name: "霜之哀伤",user:3371532855},
+                    {name: "生存的重压",user:2372933404},
+                    {name: "感恩",user:3230411246},
+                    {name: "时间行走",user:2420233649},
+                    {name: "御巫！开舞！",user:2936223611},
+                    {name: "冥鳴",user:2936223611},
+                    {name: "猫车信号弹",user:2936223611},
+                    {name: "⑨",user:2936223611},
+                    {name: "帮帮我！尾巴大爷！",user:2936223611},
+                    {name: "迷你狙击枪",user:2936223611},
+                    {name: "玖",user:2648180372},
+                    {name: "阳光开朗大男孩",user:417357882},
+                    {name: "戒律之赐",user:2756047249},
+                    {name: "极恶血如意",user:2123295685},
+                    {name: "暴食症",user:361525195},
+                    {name: "病娇-极恶暴食",user:2756047249},
+                    {name: "超级奥特爆炸",user:2179885504},
+                    {name: "纯爱战神",user:708828846},
+                    {name: "黄旭东",user:2123295685},
+                    {name: "记忆唤醒术",user:2312411543},
+                    {name: "魅魔之触",user:2644982732},
+                    {name: "三相之力",user:2756047249},
+                    {name: "单兵作战",user:317509056},
+                    // {name: "生命火种",user:},
+                    {name: "孙一峰",user:718187270},
+                    {name: "探索者",user:703607486},
+                    {name: "天秤座",user:1195330012},
+                    {name: "痛苦面具",user:2567156437},
+                    {name: "一日恶人",user:3538496156},
+                    {name: "樱落",user:361525195},
+                    {name: "永恒的爱",user:3230411246},
+                    {name: "宇智波佐助",user:3166882510},
+                    {name: "欲望",user:2644982732},
+                    {name: "月下誓约",user:3166882510},
+                    {name: "子夜的阿塔吉娜",user:2671400858},
+                    {name: "胡桃胡桃桃",user:2021228853},
+                    {name: "灰蛊风暴",user:1450420792},
+                    {name: "机械凝光",user:351221793},
+                    {name: "力场发生器(小趴菜)",user:2445574898},
+                    {name: "力场发生器",user:794425831},
+                    {name: "骚骚可浪",user:2049344688},
+                    {name: "神之才能",user:2030938241},
+                    {name: "星际好兄弟的加成",user:515244245},
+                    {name: "异世界联结",user:2567156437},
+                    {name: "躲藏起来的目光",user:403015696},
+                    {name: "威震天",user:3371532855},
+                    {name: "源氏",user:3303420073},
+
+                ]
+            }
+        }
+        }).mount('#app')
+        initList();
+    </script>
+</body>
+
+</html>

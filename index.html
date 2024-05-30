@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿克岛-空间站人员</title>
+    <link rel="stylesheet" href="./css/thank.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="icon" href="./assets/网站ICON.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4271778_4ofmios5k5x.css">
+    <script src=".\js\unpkg.com_vue@3.3.4_dist_vue.global.js"></script>
+</head>
+
+
+<body>
+    <div id="app">
+        <div class="bg"></div>
+        <div class="nav">
+            <div class="logo"><img src="./assets//死亡空间站.png" alt=""></div>
+            <ul>
+                <!-- <li><a href="/bulletin.html"><i class="iconfont  icon-quanzi"></i><span>公告</span></a></li> -->
+                <!-- <li ><a href="/activity.html"><i class="iconfont  icon-paixu"></i><span>活动</span></a></li> -->
+                <!-- <li><a href="/personal.html"><i class="iconfont  icon-qianbao"></i><span>展览</span></a></li> -->
+                <!-- <li><a href="/contest.html"><i class="iconfont  icon-qushi"></i><span>竞速</span></a></li> -->
+                <li class="active"><a href="/index.html"><i class="iconfont  icon-pinglun"></i><span>先锋组</span></a></li>
+            </ul>   
+        </div>
+    
+        <div id="pageCenter">
+            <div class="title">
+                <!-- <p class="logo" style="width: 50%;"><img src="./assets//死亡空间站.png" alt=""></p> -->
+                <p class="main">{{memberRant.length}}位小伙伴支持</p>
+                <!-- <p class="other">联系乌鸦在页面上留言</p> -->
+                <!-- <p class="other">历史赞助每人可联系乌鸦白嫖乌鸦T恤一件(空间站体恤,成本15~25)</p> -->
+            </div>
+        </div>
+        <div id="List">
+            <ul class="development">
+                <li v-for="item in development" :id="item.qq">
+                    <img class="header" :src="'https://q4.qlogo.cn/g?b=qq&nk='+ item.qq + '&s=140'" alt="" class="personalMaster">
+                    <div class="info">
+                        <p class="userName">{{item.name}}</p>
+                        <!-- <p class="qq">{{item.qq}}</p> -->
+                        <!-- <p class="money">历史{{item.quota}}赞助</p> -->
+                    </div>
+                </li>
+            </ul>
+            <!-- <ul class="mini">
+                <li v-for="item in memberRant">
+                    <a :href="'#'+item.qq">
+                        <img class="header" :src="'https://q4.qlogo.cn/g?b=qq&nk='+ item.qq + '&s=140'" alt="" class="personalMaster">
+                    </a>
+                </li>
+            </ul> -->
+            <ul class="block">
+                <li v-for="item in memberRant" :id="item.qq">
+                    <img class="header" :src="'https://q4.qlogo.cn/g?b=qq&nk='+ item.qq + '&s=140'" alt="" class="personalMaster">
+                    <div class="info">
+                        <p class="userName">{{item.name}}</p>
+                        <p class="qq">{{item.qq}}</p>
+                        <!-- <p class="money">历史{{item.quota}}赞助</p> -->
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let subMoney = 0;
+        let development = [
+            {name: "冷漠乌鸦",qq: 3537168410,date: "制作人"},
+            {name: "leo",qq: 508008817,date: "制作人"},
+        ]
+        let memberMoney = [
+            {name: "我是谁",qq: 3076187996,date: "9-2",quota: 30},
+            {name: "野生阿库娅",qq: 3030931667,date: "9-3",quota: 30},
+            {name: "あ№落欣∮ぁ",qq: 1261110954,date: "9-3",quota: 30},
+            {name: ".",qq: 844505921,date: "9-3",quota: 30},
+            {name: "°",qq: 494555796,date: "9-3",quota: 30},
+            {name: "御缘影萧岚",qq: 1169072988,date: "9-3",quota: 30},
+            {name: "泡沫.",qq: 2291508240,date: "9-3",quota: 30},
+            {name: "？，！，！！，",qq: 3438706932,date: "9-3",quota: 30},
+            {name: "小熊变成憨憨",qq: 1328955708,date: "9-3",quota: 30},
+            {name: "泡沫",qq: 772162239,date: "9-3",quota: 30},
+            {name: "X",qq: 1220252296,date: "9-3",quota: 30},
+            {name: "我永远喜欢魂魄妖梦",qq: 1501399804,date: "9-3",quota: 30},
+            {name: "日月同辉",qq: 2026164245,date: "9-3",quota: 30},
+            {name: "十四",qq: 1943007429,date: "9-3",quota: 30},
+            {name: "泡沫",qq: 2073128100,date: "9-3",quota: 30},
+            {name: "欧阳烜",qq: 1341669547,date: "9-3",quota: 30},
+            {name: "Amh",qq: 211546769,date: "9-3",quota: 30},
+            {name: "Mr.D",qq: 3306199226,date: "9-3",quota: 30},
+            {name: "慕倾语",qq: 5297968,date: "9-3",quota: 30},
+            {name: "吴上帝是只喵狐狸",qq: 2055576630,date: "9-3",quota: 30},
+            {name: "如初.",qq: 1847508192,date: "9-3",quota: 30},
+            {name: "九彩",qq: 2504026674,date: "9-3",quota: 30},
+            {name: "飞鸟马时",qq: 3754191576,date: "9-3",quota: 30},
+            {name: "豆豆",qq: 450963390,date: "9-3",quota: 30},
+            {name: "程姬如雪",qq: 2570709244,date: "9-3",quota: 30},
+            {name: "maybe",qq: 3063496104,date: "9-3",quota: 30},
+            {name: "谭意铭",qq: 3303420073,date: "9-3",quota: 30},
+            {name: "猫",qq: 1344947911,date: "9-3",quota: 30},
+            {name: "洄ˇ湘ˇ濄法",qq: 229390310,date: "9-3",quota: 30},
+        ]
+
+        let memberRant = [];
+        // 合并记录至QQ为单位下的数据
+        function initRant(){
+            // 检索所有记录
+            for (let index = 0; index < memberMoney.length; index++) {
+                let member = memberMoney[index];
+                let isExist = false;
+                // 检索现有排行是否已经有记录
+                for (let j = 0; j < memberRant.length; j++) {
+                    let rant = memberRant[j];
+                    if(rant.qq == member.qq){
+                        rant.quota += member.quota;
+                        isExist = true;
+                        break;
+                    }
+                }
+                if(!isExist){
+                    memberRant.push(member);
+                }
+            }
+        }
+        // 对赞助数据进行排序
+        function initRantSort(){
+            memberRant = memberRant.sort(function(a,b){
+                return  b.quota - a.quota;
+            })
+        }
+
+        const { createApp, ref } = Vue
+        createApp({
+        setup() {
+            const message = ref('Hello vue!');
+            initRant();
+            initRantSort();
+            console.log(memberRant);
+            return {
+                    memberRant,
+                    development
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
